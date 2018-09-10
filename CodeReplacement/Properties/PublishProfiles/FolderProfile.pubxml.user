@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Development\CodeReplacement\CodeReplacement\bin\Release\PublishOutput</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/CodeReplacement.dll">
+      <publishTime>09/07/2018 19:48:40</publishTime>
+    </File>
+    <File Include="bin/CodeReplacement.pdb">
+      <publishTime>09/07/2018 19:48:40</publishTime>
+    </File>
+    <File Include="bin/HtmlAgilityPack.dll">
+      <publishTime>05/07/2010 11:32:56</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>03/30/2006 12:24:28</publishTime>
+    </File>
+    <File Include="CodeReplacementMain.aspx">
+      <publishTime>09/16/2014 23:40:07</publishTime>
+    </File>
+    <File Include="CodeReplacementMaster.Master">
+      <publishTime>09/07/2018 19:48:21</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>08/23/2011 20:08:16</publishTime>
+    </File>
+    <File Include="EditRosters.aspx">
+      <publishTime>09/15/2014 23:06:51</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.1-vsdoc.js">
+      <publishTime>08/23/2011 20:08:16</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.1.js">
+      <publishTime>08/23/2011 20:08:16</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.4.1.min.js">
+      <publishTime>08/23/2011 20:08:16</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>09/07/2018 19:48:40</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/CodeReplacement/!svn/ver/11/CodeReplacement
+END
+Web.config
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/CodeReplacement/!svn/ver/2/CodeReplacement/Web.config
+END
+Web - Copy.config
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/CodeReplacement/!svn/ver/2/CodeReplacement/Web%20-%20Copy.config
+END
+CodeReplacement.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/CodeReplacement/!svn/ver/2/CodeReplacement/CodeReplacement.csproj
+END
+CodeReplacement.Publish.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/CodeReplacement/!svn/ver/11/CodeReplacement/CodeReplacement.Publish.xml
+END
+Default.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/CodeReplacement/!svn/ver/2/CodeReplacement/Default.aspx
+END
+Web.Release.config
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/CodeReplacement/!svn/ver/2/CodeReplacement/Web.Release.config
+END
+CodeReplacementMaster.Master
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/CodeReplacement/!svn/ver/11/CodeReplacement/CodeReplacementMaster.Master
+END
+Default.aspx.designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/CodeReplacement/!svn/ver/2/CodeReplacement/Default.aspx.designer.cs
+END
+Default.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/CodeReplacement/!svn/ver/2/CodeReplacement/Default.aspx.cs
+END
+CodeReplacementMaster.Master.designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/CodeReplacement/!svn/ver/2/CodeReplacement/CodeReplacementMaster.Master.designer.cs
+END
+CodeReplacementMaster.Master.cs
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/CodeReplacement/!svn/ver/2/CodeReplacement/CodeReplacementMaster.Master.cs
+END
+Web.Debug.config
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/CodeReplacement/!svn/ver/2/CodeReplacement/Web.Debug.config
+END
+CodeReplacement.csproj.user
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/CodeReplacement/!svn/ver/2/CodeReplacement/CodeReplacement.csproj.user
+END
+CodeReplacementMain.aspx
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/CodeReplacement/!svn/ver/9/CodeReplacement/CodeReplacementMain.aspx
+END
+CodeReplacementMain.aspx.designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/CodeReplacement/!svn/ver/2/CodeReplacement/CodeReplacementMain.aspx.designer.cs
+END
+CodeReplacementMain.aspx.cs
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/CodeReplacement/!svn/ver/9/CodeReplacement/CodeReplacementMain.aspx.cs
+END

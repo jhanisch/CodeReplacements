@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="c:\temp\Deploy\" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="jhanisch" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Web.config" publishTime="09/22/2011 23:11:12" />
+    <file relUrl="bin/CodeReplacement.pdb" publishTime="10/26/2014 11:06:21" />
+    <file relUrl="bin/HtmlAgilityPack.dll" publishTime="05/07/2010 11:32:56" />
+    <file relUrl="bin/log4net.dll" publishTime="03/30/2006 12:24:28" />
+    <file relUrl="CodeReplacementMaster.Master" publishTime="12/07/2014 11:29:55" />
+    <file relUrl="bin/log4net.xml" publishTime="03/30/2006 12:24:28" />
+    <file relUrl="Scripts/jquery-1.4.1.js" publishTime="08/23/2011 20:08:16" />
+    <file relUrl="EditRosters.aspx" publishTime="09/15/2014 23:06:51" />
+    <file relUrl="CodeReplacementMain.aspx" publishTime="09/16/2014 23:40:07" />
+    <file relUrl="bin/CodeReplacement.dll" publishTime="10/26/2014 11:06:21" />
+    <file relUrl="Scripts/jquery-1.4.1-vsdoc.js" publishTime="08/23/2011 20:08:16" />
+    <file relUrl="Default.aspx" publishTime="08/23/2011 20:08:16" />
+    <file relUrl="Scripts/jquery-1.4.1.min.js" publishTime="08/23/2011 20:08:16" />
+  </publishProfile>
+</publishData>

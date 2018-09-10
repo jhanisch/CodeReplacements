@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CodeReplacementMaster.master.cs" Inherits="CodeReplacement.CodeReplacementMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 100%;
+        }
+        .style2
+        {
+            text-align: center;
+            font-size: xx-large;
+            font-family: Calibri;
+            color: #666699;
+        }
+        .style3
+        {
+            font-size: small;
+        }
+        .style4
+        {
+            width: 610px;
+            font-size: medium;
+        }
+        .style5
+        {
+            font-size: medium;
+        }
+        .style6
+        {
+            text-align: left;
+            font-size: small;
+            font-family: Calibri;
+            color: #666699;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table cellpadding="5" cellspacing="0" class="style1">
+            <tr>
+                <td class="style6" style="font-family: Calibri; color: #808080">
+                    v0.5.7<br />
+                    <asp:HyperLink ID="HyperLink3" runat="server" 
+                        NavigateUrl="http://www.jeffhanisch.com/joomla/index.php?option=com_content&amp;view=article&amp;id=55&amp;Itemid=76">Release Notes</asp:HyperLink>
+                </td>
+                <td class="style2" style="font-family: Calibri; color: #808080">
+                    <asp:HyperLink ID="HyperLink2" runat="server" 
+                        NavigateUrl="http://www.jeffhanisch.com/joomla/index.php?option=com_content&amp;view=article&amp;id=54&amp;Itemid=76">FAQ&#39;s &amp; Donate</asp:HyperLink>
+                </td>
+                <td class="style2" style="font-family: Calibri; color: #808080">
+                    JEFF HANISCH</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            <p>
+            </p>
+        
+        </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr>
+                <td style="font-family: Calibri; color: #808080" colspan="3">
+                    <table class="style1">
+                        <tr>
+                            <td class="style4">
+                                A<span class="style5">ll data provided by these Code Replacements are provided As-Is, with no 
+                                guarantee as to</span><br class="style5" />
+                                <span class="style5">accuracy.&nbsp; ALWAYS be sure to verify the codes yourself.</span></td>
+                            <td style="text-align: center">
+                                <asp:HyperLink ID="HyperLink1" runat="server" ForeColor="#999999" 
+                                    NavigateUrl="mailto:jeff@jeffhanisch.com">jeff@jeffhanisch.com</asp:HyperLink>
+                            </td>
+                            <td class="style3" style="text-align: right">
+                                All images<b> ©</b> Jeffrey Hanisch</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>
