@@ -530,38 +530,41 @@ public class CodeReplacements
             var TeamNames = new ArrayList();
             var TeamRosterURLs = new ArrayList();
 
-            var theTable = doc.DocumentNode.SelectSingleNode("//table[@class='tablehead']");
+            var theTables = doc.DocumentNode.SelectNodes("//tbody");
 
-            foreach (var link in theTable.ChildNodes)
+            foreach (var table in theTables)
             {
-                var a = link.ToString();
-
-                try
-                {
-                    if ((link.ChildNodes.Count >= 3) && (RemoveFormatting(link.ChildNodes[0].InnerText) != "NO.") && (RemoveFormatting(link.ChildNodes[0].InnerText) != "NO"))
+                 foreach (var link in table.ChildNodes)
                     {
-                        Player NewPlayer = new Player();
-                        NewPlayer.PlayerNumber = RemoveFormatting(link.ChildNodes[0].InnerText);
-                        NewPlayer.PlayerName = RemoveFormatting(link.ChildNodes[1].InnerText);
-                        NewPlayer.PlayerPosition = RemoveFormatting(link.ChildNodes[2].InnerText);
-                        NewPlayer.Team = TeamName;
-                        NewPlayer.Prefix = TeamPrefix;
-                        NewPlayer.PlayersSport = CurrentSport;
+                        var a = link.ToString();
 
-                        if ((NewPlayer.PlayerNumber.Trim().Length > 0) &&
-                            (NewPlayer.PlayerNumber.Trim() != "-") &&
-                            (NewPlayer.PlayerNumber.Trim() != "--"))
+                    try
+                    {
+                        if ((link.ChildNodes.Count >= 3) && (RemoveFormatting(link.ChildNodes[0].InnerText) != "NO.") && (RemoveFormatting(link.ChildNodes[0].InnerText) != "NO"))
                         {
-                            if (!PlayerList.Contains(NewPlayer))
+                            Player NewPlayer = new Player();
+                            NewPlayer.PlayerNumber = RemoveFormatting(link.ChildNodes[0].InnerText);
+                            NewPlayer.PlayerName = RemoveFormatting(link.ChildNodes[1].InnerText);
+                            NewPlayer.PlayerPosition = RemoveFormatting(link.ChildNodes[2].InnerText);
+                            NewPlayer.Team = TeamName;
+                            NewPlayer.Prefix = TeamPrefix;
+                            NewPlayer.PlayersSport = CurrentSport;
+
+                            if ((NewPlayer.PlayerNumber.Trim().Length > 0) &&
+                                (NewPlayer.PlayerNumber.Trim() != "-") &&
+                                (NewPlayer.PlayerNumber.Trim() != "--"))
                             {
-                                PlayerList.Add(NewPlayer);
+                                if (!PlayerList.Contains(NewPlayer))
+                                {
+                                    PlayerList.Add(NewPlayer);
+                                }
                             }
                         }
                     }
-                }
-                catch (Exception ESPNException)
-                {
-                    log.Error(ESPNException.Message.ToString());
+                    catch (Exception ESPNException)
+                    {
+                        log.Error(ESPNException.Message.ToString());
+                    }
                 }
             }
 
@@ -905,7 +908,8 @@ public class CodeReplacements
                         string href = link.OuterHtml;
 
                         // parse out the link to the team roster from the html
-                        href = href.Substring((href.IndexOf('"') + 1), href.LastIndexOf('"') - href.IndexOf('"') - 1);
+//                        href = href.Substring((href.IndexOf('"') + 1), href.LastIndexOf('"') - href.IndexOf('"') - 1);
+                    href = link.Attributes[0].Value;
                         TeamRosterURLs.Add(href);
 
                     }

@@ -136,7 +136,8 @@ void SetAltVisitingTeamName(object sender, EventArgs e)
     </p>
 <p>
         <asp:Button ID="btnEditPlayerList" runat="server" 
-            onclick="btnEditPlayerList_Click" Text="Edit Roster" CssClass="style3" />
+             Text="Edit Roster" onclick="btnEditPlayerList_Click" 
+            style="height: 26px" CssClass="style3" />
     </p>
     <p>
         <asp:HyperLink ID="FileLink" runat="server" Visible="False" CssClass="style4">Download Code Replacement File</asp:HyperLink>

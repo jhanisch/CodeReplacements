@@ -47,7 +47,7 @@
         <table cellpadding="5" cellspacing="0" class="style1">
             <tr>
                 <td class="style6" style="font-family: Calibri; color: #808080">
-                    v0.6.2<br />
+                    v0.7.0<br />
                     <asp:HyperLink ID="HyperLink3" runat="server" 
                         NavigateUrl="http://www.jeffhanisch.com/joomla/index.php?option=com_content&amp;view=article&amp;id=55&amp;Itemid=76">Release Notes</asp:HyperLink>
                 </td>
