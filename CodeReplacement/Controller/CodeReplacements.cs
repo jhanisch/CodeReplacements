@@ -616,6 +616,8 @@ public class CodeReplacements
         OutputParm = OutputParm.Replace('\t', ' ');
         OutputParm = OutputParm.Replace("&nbsp;", "");
 
+        OutputParm = HttpUtility.HtmlDecode(OutputParm);
+
         int TEAMTextStart = OutputParm.IndexOf("Team ");
         if (TEAMTextStart > 0)
         {
@@ -851,29 +853,39 @@ public class CodeReplacements
     public List<Team> GetTeams_ESPN(Constants.Sports Sport)
     {
         string TeamsURL = string.Empty;
+        var sportPrefix = string.Empty;
+        var lookupURL = string.Empty;
         List<Team> TeamsList = new List<Team>();
 
         switch (Sport)
         {
             case Constants.Sports.MLB:
                 TeamsURL = "http://espn.go.com/mlb/teams";
+                sportPrefix = "mlb";
                 break;
             case Constants.Sports.NBA:
                 TeamsURL = "http://espn.go.com/nba/teams";
+                sportPrefix = "nba";
                 break;
             case Constants.Sports.NFL:
                 TeamsURL = "http://espn.go.com/nfl/teams";
+                sportPrefix = "nfl";
                 break;
             case Constants.Sports.NCAAFootball:
                 TeamsURL = "http://espn.go.com/college-football/teams";
+                sportPrefix = "college-football";
                 break;
             case Constants.Sports.NCAAMensBasketball:
                 TeamsURL = "http://espn.go.com/mens-college-basketball/teams";
+                sportPrefix = "mens-college-basketball";
                 break;
             case Constants.Sports.NCAAWomensBasketball:
                 TeamsURL = "http://espn.go.com/womens-college-basketball/teams";
+                sportPrefix = "womens-college-basketball";
                 break;
         }
+
+        lookupURL = String.Format("{0}/{1}", sportPrefix, "team/roster");
 
         try
         {
@@ -891,28 +903,15 @@ public class CodeReplacements
             ArrayList TeamNames = new ArrayList();
             ArrayList TeamRosterURLs = new ArrayList();
 
+//            var spans = doc.DocumentNode.SelectNodes("//span//a");
 
-            foreach (HtmlNode link in doc.DocumentNode.SelectNodes("//a[@href]"))
+            foreach (HtmlNode link in doc.DocumentNode.SelectNodes("//span//a"))
             {
-                // class="bi" seems to hold the team names
-                //                if (link.OuterHtml.Contains("class=\"bi\""))
-                var inner = link.InnerHtml.ToUpper();
-                if (link.InnerHtml.Contains("class=\"clr-gray-01 h5\""))
-                    {
-                        TeamNames.Add(link.InnerText);
+                if (link.OuterHtml.Contains(lookupURL))
+                {
+                    TeamNames.Add(link.ParentNode.ParentNode.ParentNode.FirstChild.InnerText);
+                    TeamRosterURLs.Add(link.Attributes[0].Value);
                 }
-                else
-                    // href w/ the ROSTER text holds the link to the team rosters
-                    if (link.InnerText.ToUpper().Contains("ROSTER"))
-                    {
-                        string href = link.OuterHtml;
-
-                        // parse out the link to the team roster from the html
-//                        href = href.Substring((href.IndexOf('"') + 1), href.LastIndexOf('"') - href.IndexOf('"') - 1);
-                    href = link.Attributes[0].Value;
-                        TeamRosterURLs.Add(href);
-
-                    }
             }
 
             int RowCount = (TeamNames.Count < TeamRosterURLs.Count ? TeamNames.Count : TeamRosterURLs.Count);
