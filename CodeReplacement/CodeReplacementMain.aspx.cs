@@ -123,7 +123,10 @@ namespace CodeReplacement
             foreach (Team t in TeamList)
             {
                 ListItem newItem = new ListItem(t.Name, t.URL);
-                ddl.Items.Add(newItem);                
+                if (!ddl.Items.Contains(newItem))
+                {
+                    ddl.Items.Add(newItem);
+                }
             }
         }
 
