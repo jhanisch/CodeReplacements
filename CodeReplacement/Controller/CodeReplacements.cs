@@ -535,36 +535,38 @@ public class CodeReplacements
             foreach (var table in theTables)
             {
                  foreach (var link in table.ChildNodes)
-                    {
-                        var a = link.ToString();
+                 {
+                     var a = link.ToString();
+                    
+                     try
+                     {
+                         if ((link.ChildNodes.Count >= 3) && (RemoveFormatting(link.ChildNodes[0].InnerText) != "NO.") && (RemoveFormatting(link.ChildNodes[0].InnerText) != "NO"))
+                         {
+                             Player NewPlayer = new Player();
 
-                    try
-                    {
-                        if ((link.ChildNodes.Count >= 3) && (RemoveFormatting(link.ChildNodes[0].InnerText) != "NO.") && (RemoveFormatting(link.ChildNodes[0].InnerText) != "NO"))
-                        {
-                            Player NewPlayer = new Player();
-                            NewPlayer.PlayerNumber = RemoveFormatting(link.ChildNodes[0].InnerText);
-                            NewPlayer.PlayerName = RemoveFormatting(link.ChildNodes[1].InnerText);
-                            NewPlayer.PlayerPosition = RemoveFormatting(link.ChildNodes[2].InnerText);
-                            NewPlayer.Team = TeamName;
-                            NewPlayer.Prefix = TeamPrefix;
-                            NewPlayer.PlayersSport = CurrentSport;
+                             NewPlayer.PlayerNumber = Regex.Match(RemoveFormatting(link.ChildNodes[1].InnerText), @"\d+").Value;
+                             var fullPlayerName = RemoveFormatting(link.ChildNodes[1].InnerText);
+                             NewPlayer.PlayerName = fullPlayerName.Substring(0, fullPlayerName.Length - (NewPlayer.PlayerNumber.Length));
+                             NewPlayer.PlayerPosition = RemoveFormatting(link.ChildNodes[2].InnerText);
+                             NewPlayer.Team = TeamName;
+                             NewPlayer.Prefix = TeamPrefix;
+                             NewPlayer.PlayersSport = CurrentSport;
 
-                            if ((NewPlayer.PlayerNumber.Trim().Length > 0) &&
-                                (NewPlayer.PlayerNumber.Trim() != "-") &&
-                                (NewPlayer.PlayerNumber.Trim() != "--"))
-                            {
-                                if (!PlayerList.Contains(NewPlayer))
-                                {
-                                    PlayerList.Add(NewPlayer);
-                                }
-                            }
+                             if ((NewPlayer.PlayerNumber.Trim().Length > 0) &&
+                                 (NewPlayer.PlayerNumber.Trim() != "-") &&
+                                 (NewPlayer.PlayerNumber.Trim() != "--"))
+                             {
+                                 if (!PlayerList.Contains(NewPlayer))
+                                 {
+                                     PlayerList.Add(NewPlayer);
+                                 }
+                             }
                         }
-                    }
-                    catch (Exception ESPNException)
-                    {
+                     }
+                     catch (Exception ESPNException)
+                     {
                         log.Error(ESPNException.Message.ToString());
-                    }
+                     }
                 }
             }
 
