@@ -912,7 +912,9 @@ public class CodeReplacements
                 if (link.OuterHtml.Contains(lookupURL))
                 {
                     TeamNames.Add(link.ParentNode.ParentNode.ParentNode.FirstChild.InnerText);
-                    TeamRosterURLs.Add(link.Attributes[0].Value);
+
+                    var href = link.Attributes.FirstOrDefault(url => url.Value.Contains("roster"));
+                    TeamRosterURLs.Add(href.Value);
                 }
             }
 
